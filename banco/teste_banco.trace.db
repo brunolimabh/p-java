@@ -1,0 +1,24 @@
+2023-09-14 11:28:21.322017-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILME" already exists; SQL statement:
+CREATE TABLE filme (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255),
+    anoLancamento INT
+) [42101-222]
+2023-09-14 12:15:50.651414-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO filme (nome,anoLancamento) VALUES\000a    ('Avatar 2', 2023),\000a    ('Matrix',1999),\000a    ('Interestelar'. [*]2012)\000a"; expected "identifier"; SQL statement:
+INSERT INTO filme (nome,anoLancamento) VALUES
+    ('Avatar 2', 2023),
+    ('Matrix',1999),
+    ('Interestelar'. 2012)
+ [42001-222]
+2023-09-14 12:16:01.759288-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO filme (nome,anoLancamento) VALUES\000a    ('Avatar 2', 2023),\000a    ('Matrix',1999),\000a    ([*]'Interestelar, 2012)\000a"; SQL statement:
+INSERT INTO filme (nome,anoLancamento) VALUES
+    ('Avatar 2', 2023),
+    ('Matrix',1999),
+    ('Interestelar, 2012)
+ [42000-222]
+2023-09-14 12:31:05.689504-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM filme WHERE nome LIKE [*]%at%"; SQL statement:
+SELECT * FROM filme WHERE nome LIKE %at% [42000-222]
