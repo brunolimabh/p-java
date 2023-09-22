@@ -5,6 +5,11 @@ public class Main {
         Livro big = new Livro("1","bigbig","Bruno",10);
 
         Double peso = big.calcularPeso();
-        System.out.println(peso);
+
+        Prateleira prat = new Prateleira(10,24.0);
+        prat.adicionarLivro(big);
+
+        System.out.println(prat.getPesoTotal());
+        System.out.println(prat.getLivroPorNome("bigbig"));
     }
 }
