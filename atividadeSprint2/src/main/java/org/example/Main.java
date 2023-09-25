@@ -24,6 +24,7 @@ public class Main {
         System.out.println(umCCO.getAlunoPorNome("Bruno"));
 
         System.out.println(umCCO.getAlunoComMaiorMedia());
+        System.out.println(umCCO.getAlunoComMenorMedia());
         System.out.println(umCCO.calcularMediaTurma());
 
 

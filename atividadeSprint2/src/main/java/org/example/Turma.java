@@ -34,26 +34,27 @@ public class Turma {
         }
         return null;
     }
-    /* if nao esta funcionando */
+    /* funcionando */
     public Aluno getAlunoComMaiorMedia() {
         Aluno maiorNota = null;
         Double media = 0.0;
         for (Aluno alunoDaVez: turma) {
-            Double mediaDaVez = alunoDaVez.calcularMedia();
-            if (mediaDaVez >= media);
-            maiorNota = alunoDaVez;
-            media = alunoDaVez.calcularMedia();
+            if (alunoDaVez.calcularMedia() > media){
+                maiorNota = alunoDaVez;
+                media = alunoDaVez.calcularMedia();
+            }
         }
         return maiorNota;
     }
-    /* if nao esta funcionando */
+    /* funcionando */
     public Aluno getAlunoComMenorMedia() {
         Aluno menorNota = null;
         Double media = 100000.0;
         for (Aluno alunoDaVez: turma) {
-            if (alunoDaVez.calcularMedia() < media);
-            menorNota = alunoDaVez;
-            media = alunoDaVez.calcularMedia();
+            if (alunoDaVez.calcularMedia() < media) {
+                menorNota = alunoDaVez;
+                media = alunoDaVez.calcularMedia();
+            }
         }
         return menorNota;
     }
