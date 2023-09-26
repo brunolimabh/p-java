@@ -22,6 +22,7 @@ public class Aluno {
                 for (int i = 0; i < notas.size(); i++) {
                         media+= notas.get(i);
                 }
+                media = media / notas.size();
                 return media;
         }
 
