@@ -11,7 +11,7 @@ public class DiaSemana {
         Scanner input = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("EEEE");
-        
+
         System.out.println("Digite uma data");
         LocalDate data = LocalDate.parse(input.next(),formatter);
         LocalDate dataAgora = LocalDate.now();
