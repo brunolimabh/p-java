@@ -22,8 +22,30 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
         System.out.println("Digite uma data:");
 
-        LocalDate dataAPartirDoTexto = LocalDate.parse("28/11/2000",formatter);
+        LocalDate dataAPartirDoTexto = LocalDate.parse("28/09/2023",formatter);
         System.out.println(dataAPartirDoTexto);
 
+        LocalDate dataNova = dataAPartirDoTexto.plusDays(10);
+        System.out.println(dataNova);
+
+        if (dataAPartirDoTexto.isAfter(dataNova)) {
+            System.out.println("Esta");
+        } else {
+            System.out.println("Não está");
+        }
+
+        if (dataAPartirDoTexto.isEqual(dataNova)) {
+            System.out.println("É igual");
+        } else {
+            System.out.println("Não é igual");
+        }
+
+
+        DateTimeFormatter formatter2 = DateTimeFormatter
+                .ofPattern("\ndd/MM/yyyy EEEE\n");
+        System.out.println(formatter2.format(dataAgora));
+
+        Integer diaSemana = dataAgora.getDayOfWeek().getValue();
+        System.out.println(diaSemana);
     }
 }
