@@ -1,6 +1,7 @@
 package school.sptech;
 
 import javax.swing.text.StyledEditorKit;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Faculdade {
@@ -9,16 +10,22 @@ public class Faculdade {
   private List<Aluno> alunos;
 
   public Faculdade(String nome) {
+    this.alunos = new ArrayList<>();
+    this.nome = nome;
   }
 
   /*
-      Deve verificar se existe um aluno com o nome informado, caso não exista,
-      retorne false;
-  */
+        Deve verificar se existe um aluno com o nome informado, caso não exista,
+        retorne false;
+    */
   public Boolean existsAlunoPorNome(String nome) {
-    for (Aluno alunoDaVez: alunos) {
-      if (alunoDaVez.equals(nome)){
-        return true;
+    if (nome == null) {
+      System.out.println("Insira um aluno válido");
+    } else {
+      for (Aluno alunoDaVez : alunos) {
+          if (alunoDaVez.getNome().equalsIgnoreCase(nome)) {
+          return true;
+        }
       }
     }
     return false;
@@ -33,9 +40,13 @@ public class Faculdade {
       System.out.println("Insira um aluno válido");
     } else {
       Boolean isExiste = false;
-      for (Aluno alunoDaVez: alunos) {
-        if (alunoDaVez.equals(aluno)){
-          isExiste = true;
+      if (alunos.size() == 0) {
+        isExiste = false;
+      } else {
+        for (Aluno alunoDaVez: alunos) {
+          if (alunoDaVez.getNome().equalsIgnoreCase(aluno.getNome())){
+            isExiste = true;
+          }
         }
       }
 
@@ -61,7 +72,7 @@ public class Faculdade {
     if (posicao == -1) {
       System.out.println("O aluno não existe");
     } else {
-      alunos.remove(posicao);
+      alunos.get(posicao).setAtivo(false);
     }
   }
 
