@@ -315,6 +315,8 @@ public class ImplementacaoMetodosTests {
 
         Field campoFilme = sessaoClass.getDeclaredField(SessaoUtils.ATRIBUTO_FILME);
 
+        campoFilme.trySetAccessible();
+
         Assertions.assertEquals(3, sessoes.size());
         Assertions.assertEquals("Filme XYZ", campoFilme.get(sessaoObtida1));
         Assertions.assertEquals("Filme XYZ", campoFilme.get(sessaoObtida2));
@@ -354,6 +356,8 @@ public class ImplementacaoMetodosTests {
         Class<Sessao> sessaoClass = Sessao.class;
 
         Field campoFilme = sessaoClass.getDeclaredField(SessaoUtils.ATRIBUTO_FILME);
+
+        campoFilme.trySetAccessible();
 
         Assertions.assertFalse(sessoes.isEmpty());
         Assertions.assertEquals(1, sessoes.size());
