@@ -58,6 +58,7 @@ public class VendedorComissao {
                 ", nome='" + nome + '\'' +
                 ", vendas=" + vendas +
                 ", taxa=" + taxa +
+                ", salario=" + calcularSalario() +
                 '}';
     }
 }
