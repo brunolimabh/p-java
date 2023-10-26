@@ -12,7 +12,7 @@ public class Vendedor extends Funcionario{
 
     @Override
     public Double calcSalario() {
-        return vendas * taxa;
+        return vendas * (taxa / 100);
     }
 
     public Double getVendas() {

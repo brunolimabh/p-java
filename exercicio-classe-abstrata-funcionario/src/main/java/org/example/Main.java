@@ -5,7 +5,7 @@ public class Main {
 
         Empresa sptech = new Empresa();
 
-        Vendedor v1 = new Vendedor("12","Bruno",10.0,2.0);
+        Vendedor v1 = new Vendedor("12","Bruno",1350.0,10.0);
         Horista h1 = new Horista("13", "Paulo", 8,15.00);
         Horista h2 = new Horista("14", "Caio", 6,25.00);
 
