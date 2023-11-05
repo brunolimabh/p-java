@@ -1,7 +1,7 @@
 package org.example;
 
-public class Heroi extends Personagem{
-    public Heroi(String codinome, String nome) {
+public class Vilao extends Personagem{
+    public Vilao(String codinome, String nome) {
         super(codinome, nome);
     }
 
@@ -11,6 +11,6 @@ public class Heroi extends Personagem{
         for (SuperPoder poderDaVez: super.getPoderes()){
             forcaTotal += poderDaVez.getCategoria();
         }
-        return forcaTotal * 1.15;
+        return forcaTotal;
     }
 }
