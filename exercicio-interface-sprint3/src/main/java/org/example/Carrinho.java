@@ -25,7 +25,8 @@ public class Carrinho {
     }
     public void exibirItensCarrinho(){
         for (Vendavel vendavelDaVez: vendavels){
-            vendavelDaVez.toString();
+            System.out.println(vendavelDaVez.toString());
+
         }
     }
 

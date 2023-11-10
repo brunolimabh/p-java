@@ -10,9 +10,7 @@ public abstract class Produto implements Vendavel {
     }
 
     @Override
-    public double getValorVenda() {
-        return precoCusto;
-    }
+    public abstract double getValorVenda();
 
     public int getCodigo() {
         return codigo;

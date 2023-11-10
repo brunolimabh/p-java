@@ -62,19 +62,17 @@ public class Main {
 
                 Servico servico = new Servico(descricao,codigo,quantHoras,valorHora);
                 carrinho.adicionarVendavel(servico);
-                System.out.println("Serviço %s adicionado com sucesso".formatted(servico));
+                System.out.println("Serviço %s adicionado com sucesso".formatted(descricao));
             } else if (opcao == 4) {
-
+                carrinho.exibirItensCarrinho();
             } else if (opcao == 5) {
-
+                System.out.println("O valor total: R$%.2f".formatted(carrinho.calculaTotalVenda()));
             } else if (opcao == 6) {
                 System.out.println("Carrinho encerrado\nVolte sempre");
             } else {
                 System.out.println("Insira um numero válido");
             }
         } while (opcao != 6);
-
-        Servico servico = new Servico("API REST",3,44,25.5);
 
     }
 }
