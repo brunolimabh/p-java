@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BancoMySQL implements Conexao {
+public class BancoMySQLLocal implements Conectavel {
     private JdbcTemplate conexao;
 
     @Override
@@ -21,7 +21,7 @@ public class BancoMySQL implements Conexao {
     }
 
     @Override
-    public List<Componente> selectComponentes() {
+    public List<Componente> selectComponentes(JdbcTemplate jdbcTemplate) {
         List<Componente> componentes = new ArrayList<>();
         return componentes;
     }
