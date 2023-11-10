@@ -21,7 +21,7 @@ public class ProdutoRowMapper implements RowMapper<Produto> {
             eletronico.setPeso((resultSet.getDouble("peso")));
             eletronico.setFabricante((resultSet.getString("fabricante")));
             return eletronico;
-        } else if (tipo.equals("VESTUARIO")) {
+        } else {
             Vestuario vestuario = new Vestuario();
             vestuario.setId((resultSet.getInt("id")));
             vestuario.setNome((resultSet.getString("nome")));
@@ -31,6 +31,5 @@ public class ProdutoRowMapper implements RowMapper<Produto> {
             vestuario.setWhiteLabel((resultSet.getBoolean("whiteLabel")));
             return vestuario;
         }
-        return null;
     }
 }

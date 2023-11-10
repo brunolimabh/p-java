@@ -41,7 +41,7 @@ public class Main {
                 v1.getNome(),v1.getPrecoBase(),v1.getTamanho(),v1.getCor(),v1.getWhiteLabel());
 
         List<Produto> produtos =
-                con.query("SELECT * FROM produtos", new BeanPropertyRowMapper<>(Produto.class));
+                con.query("SELECT * FROM produto", new ProdutoRowMapper());
 
         System.out.println(produtos);
     }
