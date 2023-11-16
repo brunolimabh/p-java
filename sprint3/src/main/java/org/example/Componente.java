@@ -11,6 +11,8 @@ public abstract class Componente {
         this.unidadeMedida = unidadeMedida;
     }
 
+    public abstract Double porcentagemUso();
+
     public Integer getIdComp() {
         return idComp;
     }

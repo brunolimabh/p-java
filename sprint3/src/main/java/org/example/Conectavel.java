@@ -8,5 +8,4 @@ public interface Conectavel {
     JdbcTemplate Conexao();
 
     List<Componente> selectComponentes(JdbcTemplate jdbcTemplate);
-
 }

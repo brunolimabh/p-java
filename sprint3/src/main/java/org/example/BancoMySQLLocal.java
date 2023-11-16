@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BancoMySQLLocal implements Conectavel {
-    private JdbcTemplate conexao;
+    private static JdbcTemplate conexao;
 
     @Override
     public JdbcTemplate Conexao() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl("jdbc:h2:file:./banco");
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUsername("sa");
-        dataSource.setPassword("");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/ConWay");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUsername("user_conway");
+        dataSource.setPassword("urubu100");
         this.conexao = new JdbcTemplate(dataSource);
         return conexao;
     }
@@ -26,3 +26,4 @@ public class BancoMySQLLocal implements Conectavel {
         return componentes;
     }
 }
+
