@@ -1,5 +1,6 @@
-package org.example;
+package org.example.banco;
 
+import org.example.componente.Componente;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;

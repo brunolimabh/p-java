@@ -1,4 +1,4 @@
-package org.example;
+package org.example.componente;
 
 import com.github.britooo.looca.api.core.Looca;
 
