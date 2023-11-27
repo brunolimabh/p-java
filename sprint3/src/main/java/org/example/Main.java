@@ -1,6 +1,9 @@
 package org.example;
 
+import org.example.agendamento.InserirRegistroTask;
 import org.example.banco.BancoMySQLLocal;
+import org.example.banco.BancoSQLServer;
+import org.example.banco.Conectavel;
 import org.example.funcionario.FuncionarioRowMapper;
 import org.example.totem.Totem;
 import org.example.totem.TotemRowMapper;
@@ -16,16 +19,19 @@ import com.github.britooo.looca.api.group.sistema.Sistema;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Timer;
 
 public class Main {
     public static void main(String[] args) {
 
         LocalDateTime dataHora = LocalDateTime.now();
-        JdbcTemplate con = new BancoMySQLLocal().Conexao();
+        Conectavel sqlServer = new BancoSQLServer();
+        Conectavel mySql = new BancoMySQLLocal();
         Scanner inputString = new Scanner(System.in);
         Scanner inputNumber = new Scanner(System.in);
         Integer escolha = 0;
         Integer fkEmpresa = 0;
+
 
         do {
             System.out.println("0 - Sair");
@@ -41,12 +47,12 @@ public class Main {
                     System.out.println("Insira sua senha:");
                     String senha = inputString.nextLine();
 
-                    List<Integer> count = con.queryForList("SELECT COUNT(idFuncionario) FROM Funcionario WHERE email = ? AND senha = ?",
+                    List<Integer> count = mySql.Conexao().queryForList("SELECT COUNT(idFuncionario) FROM Funcionario WHERE email = ? AND senha = ?",
                             Integer.class,
                             email, senha);
 
                     if (count.get(0) == 1) {
-                        con.query("SELECT idFuncionario, email, senha, nome, fkEmpresa FROM Funcionario WHERE email = ? AND senha = ?",
+                        mySql.Conexao().query("SELECT idFuncionario, email, senha, nome, fkEmpresa FROM Funcionario WHERE email = ? AND senha = ?",
                                 new FuncionarioRowMapper(),
                                 email, senha);
 
@@ -57,7 +63,7 @@ public class Main {
                             System.out.println("Informe o nome destá máquina (cadastrado no nosso site)");
                             System.out.println("0 - Voltar");
                             System.out.println("1 - Cadastrar Máquina");
-                            List<Totem> totens = con.query("SELECT * FROM Totem WHERE idTotem NOT IN (SELECT fkTotem FROM registro group by fkTotem)"
+                            List<Totem> totens = mySql.Conexao().query("SELECT * FROM Totem WHERE idTotem NOT IN (SELECT fkTotem FROM registro group by fkTotem)"
                                     , new TotemRowMapper());
                             for (int i = 0; i < totens.size(); i++) {
                                 System.out.println("%d - %s".formatted(i + 2, totens.get(i).getNome()));
@@ -80,12 +86,19 @@ public class Main {
                                     escolha = inputNumber.nextInt();
 
                                     if (escolha == 1){
-                                        List<TotemComponente> totemComponentes= con.query("SELECT nome, fkTotem, valor FROM TotemComponente JOIN Componente ON fkComponente = idComponente AND  fkTotem = ?",
+                                        List<TotemComponente> totemComponentes= mySql.Conexao().query("SELECT nome, fkTotem, valor FROM TotemComponente JOIN Componente ON fkComponente = idComponente AND  fkTotem = ?",
                                                 new TotemComponenteRowMapper(),
                                                 totemAtual.getIdTotem());
 
+                                        Timer agendador = new Timer();
+                                        InserirRegistroTask task = new InserirRegistroTask(1000,1000,totemAtual.getIdTotem(),totemComponentes);
+                                        agendador.schedule(task, task.getDelay(), task.getPeriodo());
 
-                                        System.out.println(totemComponentes);
+                                        inputString.nextLine();
+                                        agendador.cancel();
+
+                                        System.out.println("Monitoramento encerrado!");
+
                                     }
 
                                 } while (escolha != 0);

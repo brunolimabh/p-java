@@ -4,6 +4,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.example.componente.Componente;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +23,9 @@ public class BancoMySQLLocal implements Conectavel {
     }
 
     @Override
-    public List<Componente> selectComponentes(JdbcTemplate jdbcTemplate) {
-        List<Componente> componentes = new ArrayList<>();
-        return componentes;
+    public void insertRegistro(Double valor, LocalDateTime dataHora, Integer fkComponente, Integer fkTotem) {
+        Conexao().update("INSERT INTO Registro (valor, dataHora, fkComponente, fkTotem) VALUES (?,?,?,?)",
+                valor,dataHora,fkComponente,fkTotem);
     }
 }
 

@@ -12,7 +12,7 @@ public class TotemComponenteRowMapper implements RowMapper<TotemComponente> {
 
     public TotemComponente mapRow(ResultSet resultSet, int i) throws SQLException {
         TotemComponente totemComponente = new TotemComponente();
-        totemComponente.setFkComponente(resultSet.getInt("nome"));
+        totemComponente.setNome(resultSet.getString("nome"));
         totemComponente.setFkTotem(resultSet.getInt("fkTotem"));
         totemComponente.setValor(resultSet.getInt("valor"));
 

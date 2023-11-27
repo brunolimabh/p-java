@@ -1,25 +1,25 @@
 package org.example.totemcomponente;
 
 public class TotemComponente {
-    private Integer fkComponente;
+    private String nome;
     private Integer fkTotem;
     private Integer valor;
 
     public TotemComponente() {
     }
 
-    public TotemComponente(Integer fkComponente, Integer fkTotem, Integer valor) {
-        this.fkComponente = fkComponente;
+    public TotemComponente(String nome, Integer fkTotem, Integer valor) {
+        this.nome = nome;
         this.fkTotem = fkTotem;
         this.valor = valor;
     }
 
-    public Integer getFkComponente() {
-        return fkComponente;
+    public String getNome() {
+        return nome;
     }
 
-    public void setFkComponente(Integer fkComponente) {
-        this.fkComponente = fkComponente;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Integer getFkTotem() {
@@ -41,7 +41,7 @@ public class TotemComponente {
     @Override
     public String toString() {
         return "TotemComponente{" +
-                "fkComponente=" + fkComponente +
+                "nome=" + nome +
                 ", fkTotem=" + fkTotem +
                 ", valor=" + valor +
                 '}';
