@@ -11,6 +11,11 @@ import org.example.totemcomponente.TotemComponente;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
@@ -20,7 +25,7 @@ public class InserirRegistroTask extends TimerTask {
     private int delay;
     private int periodo;
     private int fkTotem;
-    private LocalDateTime dataHora;
+    private LocalDateTime dateTimeNow;
     private List<TotemComponente> totemComponentes;
     private List<Componente> componentes;
     private Conectavel bancoLocal;
@@ -30,7 +35,6 @@ public class InserirRegistroTask extends TimerTask {
         this.delay = delay;
         this.periodo = periodo;
         this.fkTotem = fkTotem;
-        this.dataHora = LocalDateTime.now();
         this.totemComponentes = totemComponentes;
         this.componentes = new ArrayList<>();
         this.bancoLocal = new BancoMySQLLocal();
@@ -39,19 +43,33 @@ public class InserirRegistroTask extends TimerTask {
 
     @Override
     public void run() {
+        dateTimeNow = LocalDateTime.now();
+
+        ZoneId virginiaTimeZone = ZoneId.of("America/New_York");
+        LocalDateTime horaVirginia = LocalDateTime.now(virginiaTimeZone);
+        ZoneId brtTimeZone = ZoneId.of("America/Sao_Paulo");
+        LocalDateTime horaBRT = horaVirginia.atZone(virginiaTimeZone).withZoneSameInstant(brtTimeZone).toLocalDateTime();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        String stringHoraBRT = horaBRT.format(formatter);
+
+        LocalDateTime dataHora = LocalDateTime.parse(stringHoraBRT, formatter);
+
+
+
         System.out.println("""
                 ------------------------
-                Data: %s""".formatted(dataHora));
+                Data: %s""".formatted(stringHoraBRT));
         for (int i = 0; i < totemComponentes.size(); i++) {
-            if (totemComponentes.get(i).getNome().equals("Processador")){
-                Processador processador = new Processador(1,"Processador","%");
+            if (totemComponentes.get(i).getNome().equalsIgnoreCase("cpu")){
+                Processador processador = new Processador(1,"CPU","%");
                 System.out.println("%s: %.2f%%"
                         .formatted(processador.getNome(), processador.porcentagemUso()));
 
                 bancoLocal.insertRegistro(processador.porcentagemUso(), dataHora,1,fkTotem);
                 bancoServidor.insertRegistro(processador.porcentagemUso(), dataHora,1,fkTotem);
 
-            } else if (totemComponentes.get(i).getNome().equals("Memoria")){
+            } else if (totemComponentes.get(i).getNome().equalsIgnoreCase("memoria")){
                 Memoria memoria = new Memoria(2,"Memoria","%");
                 System.out.println("%s: %.2f%%"
                         .formatted(memoria.getNome(), memoria.porcentagemUso()));
@@ -59,15 +77,15 @@ public class InserirRegistroTask extends TimerTask {
                 bancoLocal.insertRegistro(memoria.porcentagemUso(), dataHora,2,fkTotem);
                 bancoServidor.insertRegistro(memoria.porcentagemUso(), dataHora,2,fkTotem);
 
-            } /*else if (totemComponentes.get(i).getNome().equals("Disco")){
+            } else if (totemComponentes.get(i).getNome().equalsIgnoreCase("disco")){
                 Disco disco = new Disco(2,"Disco","%");
                 System.out.println("%s: %.2f%%"
                         .formatted(disco.getNome(), disco.porcentagemUso()));
 
-                bancoLocal.insertRegistro(disco.porcentagemUso(), dataHora,3,fkComponente);
-                bancoServidor.insertRegistro(disco.porcentagemUso(), dataHora,3,fkComponente);
+                bancoLocal.insertRegistro(disco.porcentagemUso(), dataHora,3,fkTotem);
+                bancoServidor.insertRegistro(disco.porcentagemUso(), dataHora,3,fkTotem);
 
-            }*/
+            }
         }
         System.out.println("------------------------");
     }

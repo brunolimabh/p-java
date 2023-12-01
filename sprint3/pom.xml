@@ -26,7 +26,8 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.AppAPI</mainClass> </manifest>
+                            <mainClass>org.example.Main</mainClass>
+                        </manifest>
                     </archive>
                 </configuration>
                 <executions>

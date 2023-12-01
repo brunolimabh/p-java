@@ -16,7 +16,7 @@ public class BancoMySQLLocal implements Conectavel {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/ConWay");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUsername("user_conway");
+        dataSource.setUsername("root");
         dataSource.setPassword("urubu100");
         this.conexao = new JdbcTemplate(dataSource);
         return conexao;

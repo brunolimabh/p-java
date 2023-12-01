@@ -62,8 +62,8 @@ public class Main {
                         do {
                             System.out.println("Informe o nome destá máquina (cadastrado no nosso site)");
                             System.out.println("0 - Voltar");
-                            System.out.println("1 - Cadastrar Máquina");
-                            List<Totem> totens = mySql.Conexao().query("SELECT * FROM Totem WHERE idTotem NOT IN (SELECT fkTotem FROM registro group by fkTotem)"
+                            /*System.out.println("1 - Cadastrar Máquina");*/
+                            List<Totem> totens = mySql.Conexao().query("SELECT * FROM Totem WHERE idTotem NOT IN (SELECT fkTotem FROM Registro group by fkTotem)"
                                     , new TotemRowMapper());
                             for (int i = 0; i < totens.size(); i++) {
                                 System.out.println("%d - %s".formatted(i + 2, totens.get(i).getNome()));
@@ -71,18 +71,18 @@ public class Main {
 
                             escolha = inputNumber.nextInt();
 
-                            if (escolha == 1) {
+                            /*if (escolha == 1) {
                                 System.out.println("Qual o nome da máquina?");
                                 String nome = inputString.nextLine();
                                 System.out.println("Qual é o estado do ");
 
-                            } else if (escolha >= 2 && escolha <= totens.size() + 2) {
+                            } else*/ if (escolha >= 2 && escolha <= totens.size() + 2) {
                                 Totem totemAtual = totens.get(escolha - 2);
 
                                 do {
                                     System.out.println("Deseja começar o monitoramento?");
                                     System.out.println("0 - Não, voltar!");
-                                    System.out.println("1 - Sim, a cada 1 segundo!");
+                                    System.out.println("1 - Sim, entre 5-20 segundos!");
                                     escolha = inputNumber.nextInt();
 
                                     if (escolha == 1){
