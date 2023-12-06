@@ -1,13 +1,13 @@
-package org.example.agendamento;
+package org.example.task;
 
 import org.example.database.BancoMySQLLocal;
 import org.example.database.BancoSQLServer;
 import org.example.database.Conectavel;
-import org.example.componente.Componente;
-import org.example.componente.Disco;
-import org.example.componente.Memoria;
-import org.example.componente.Processador;
-import org.example.totemcomponente.TotemComponente;
+import org.example.model.Componente;
+import org.example.model.Disco;
+import org.example.model.Memoria;
+import org.example.model.Processador;
+import org.example.model.TotemComponente;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

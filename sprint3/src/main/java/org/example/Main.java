@@ -1,14 +1,14 @@
 package org.example;
 
-import org.example.agendamento.InserirRegistroTask;
+import org.example.task.InserirRegistroTask;
 import org.example.database.BancoMySQLLocal;
 import org.example.database.BancoSQLServer;
 import org.example.database.Conectavel;
-import org.example.funcionario.FuncionarioRowMapper;
-import org.example.totem.Totem;
-import org.example.totem.TotemRowMapper;
-import org.example.totemcomponente.TotemComponente;
-import org.example.totemcomponente.TotemComponenteRowMapper;
+import org.example.dao.FuncionarioRowMapper;
+import org.example.model.Totem;
+import org.example.dao.TotemRowMapper;
+import org.example.model.TotemComponente;
+import org.example.dao.TotemComponenteRowMapper;
 //import com.github.britooo.looca.api.group.servicos.Servico;
 
 import java.time.LocalDateTime;

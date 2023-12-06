@@ -1,4 +1,4 @@
-package org.example.totem;
+package org.example.model;
 
 public class Totem {
     private Integer idTotem;

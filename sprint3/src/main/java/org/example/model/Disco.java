@@ -1,4 +1,4 @@
-package org.example.componente;
+package org.example.model;
 
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.DiscoGrupo;

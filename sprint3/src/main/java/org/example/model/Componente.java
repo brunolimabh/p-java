@@ -1,4 +1,4 @@
-package org.example.componente;
+package org.example.model;
 
 public abstract class Componente {
     private Integer idComp;

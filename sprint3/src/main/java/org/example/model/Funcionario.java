@@ -1,4 +1,4 @@
-package org.example.funcionario;
+package org.example.model;
 
 public class Funcionario {
     private Integer idFuncionario;

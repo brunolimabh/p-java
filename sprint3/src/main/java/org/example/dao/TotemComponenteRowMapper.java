@@ -1,6 +1,6 @@
-package org.example.totemcomponente;
+package org.example.dao;
 
-import org.example.totem.Totem;
+import org.example.model.TotemComponente;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

@@ -1,5 +1,6 @@
-package org.example.funcionario;
+package org.example.dao;
 
+import org.example.model.Funcionario;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

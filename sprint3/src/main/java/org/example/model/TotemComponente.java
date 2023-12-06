@@ -1,4 +1,4 @@
-package org.example.totemcomponente;
+package org.example.model;
 
 public class TotemComponente {
     private String nome;
