@@ -81,7 +81,7 @@ public class Main {
                                     escolha = inputNumber.nextInt();
 
                                     if (escolha == 1){
-                                        List<TotemComponente> totemComponentes= mySql.Conexao().query("SELECT nome, fkTotem, valor FROM TotemComponente JOIN Componente ON fkComponente = idComponente AND  fkTotem = ?",
+                                        List<TotemComponente> totemComponentes= mySql.Conexao().query("SELECT fkComponente, fkTotem, valor FROM TotemComponente WHERE fkTotem = ?",
                                                 new TotemComponenteRowMapper(),
                                                 totemAtual.getIdTotem());
 
@@ -126,3 +126,4 @@ public class Main {
         } while (escolha != 0);
     }
 }
+

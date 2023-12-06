@@ -3,18 +3,12 @@ package org.example.task;
 import org.example.database.BancoMySQLLocal;
 import org.example.database.BancoSQLServer;
 import org.example.database.Conectavel;
-import org.example.model.Componente;
-import org.example.model.Disco;
-import org.example.model.Memoria;
-import org.example.model.Processador;
-import org.example.model.TotemComponente;
+import org.example.model.*;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TimerTask;
+import java.util.*;
 
 public class InserirRegistroTask extends TimerTask {
 
@@ -51,35 +45,36 @@ public class InserirRegistroTask extends TimerTask {
 
         LocalDateTime dataHora = LocalDateTime.parse(stringHoraBRT, formatter);
 
-
-
         System.out.println("""
                 ------------------------
                 Data: %s""".formatted(stringHoraBRT));
         for (int i = 0; i < totemComponentes.size(); i++) {
-            if (totemComponentes.get(i).getNome().equalsIgnoreCase("cpu")){
+
+            TipoComponente componenteEncontrado = TipoComponente.of(totemComponentes.get(i).getFkComponente());
+
+            if (componenteEncontrado.getDescricao().equalsIgnoreCase("cpu")){
                 Processador processador = new Processador(1,"CPU","%");
                 System.out.println("%s: %.2f%%"
                         .formatted(processador.getNome(), processador.porcentagemUso()));
 
                 bancoLocal.insertRegistro(processador.porcentagemUso(), dataHora,1,fkTotem);
-                bancoServidor.insertRegistro(processador.porcentagemUso(), dataHora,1,fkTotem);
+//                bancoServidor.insertRegistro(processador.porcentagemUso(), dataHora,1,fkTotem);
 
-            } else if (totemComponentes.get(i).getNome().equalsIgnoreCase("memoria")){
+            } else if (componenteEncontrado.getDescricao().equalsIgnoreCase("memoria")){
                 Memoria memoria = new Memoria(2,"Memoria","%");
                 System.out.println("%s: %.2f%%"
                         .formatted(memoria.getNome(), memoria.porcentagemUso()));
 
                 bancoLocal.insertRegistro(memoria.porcentagemUso(), dataHora,2,fkTotem);
-                bancoServidor.insertRegistro(memoria.porcentagemUso(), dataHora,2,fkTotem);
+//                bancoServidor.insertRegistro(memoria.porcentagemUso(), dataHora,2,fkTotem);
 
-            } else if (totemComponentes.get(i).getNome().equalsIgnoreCase("disco")){
+            } else if (componenteEncontrado.getDescricao().equalsIgnoreCase("disco")){
                 Disco disco = new Disco(2,"Disco","%");
                 System.out.println("%s: %.2f%%"
                         .formatted(disco.getNome(), disco.porcentagemUso()));
 
                 bancoLocal.insertRegistro(disco.porcentagemUso(), dataHora,3,fkTotem);
-                bancoServidor.insertRegistro(disco.porcentagemUso(), dataHora,3,fkTotem);
+//                bancoServidor.insertRegistro(disco.porcentagemUso(), dataHora,3,fkTotem);
 
             }
         }

@@ -14,9 +14,7 @@ public class Memoria extends Componente {
     public Double porcentagemUso() {
         Looca looca = new Looca();
         com.github.britooo.looca.api.group.memoria.Memoria memoria = looca.getMemoria();
-        DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
-        decimalFormat.setRoundingMode(RoundingMode.DOWN);
         long porcentagem = (memoria.getEmUso() * 100) / memoria.getTotal();
-        return Double.parseDouble(decimalFormat.format(porcentagem));
+        return Double.parseDouble(String.valueOf(porcentagem));
     }
 }
