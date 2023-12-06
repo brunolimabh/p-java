@@ -16,7 +16,6 @@ public class TotemRowMapper implements RowMapper<Totem> {
         totem.setNome(resultSet.getString("nome"));
         totem.setFkAeroporto(resultSet.getInt("fkAeroporto"));
         totem.setFkEmpresa(resultSet.getInt("fkEmpresa"));
-
         return totem;
     }
 }

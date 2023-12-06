@@ -1,21 +1,17 @@
 package org.example.agendamento;
 
-import org.example.banco.BancoMySQLLocal;
-import org.example.banco.BancoSQLServer;
-import org.example.banco.Conectavel;
+import org.example.database.BancoMySQLLocal;
+import org.example.database.BancoSQLServer;
+import org.example.database.Conectavel;
 import org.example.componente.Componente;
 import org.example.componente.Disco;
 import org.example.componente.Memoria;
 import org.example.componente.Processador;
 import org.example.totemcomponente.TotemComponente;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;

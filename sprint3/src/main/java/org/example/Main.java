@@ -1,20 +1,15 @@
 package org.example;
 
 import org.example.agendamento.InserirRegistroTask;
-import org.example.banco.BancoMySQLLocal;
-import org.example.banco.BancoSQLServer;
-import org.example.banco.Conectavel;
+import org.example.database.BancoMySQLLocal;
+import org.example.database.BancoSQLServer;
+import org.example.database.Conectavel;
 import org.example.funcionario.FuncionarioRowMapper;
 import org.example.totem.Totem;
 import org.example.totem.TotemRowMapper;
 import org.example.totemcomponente.TotemComponente;
 import org.example.totemcomponente.TotemComponenteRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.memoria.Memoria;
-import com.github.britooo.looca.api.group.processador.Processador;
 //import com.github.britooo.looca.api.group.servicos.Servico;
-import com.github.britooo.looca.api.group.sistema.Sistema;
 
 import java.time.LocalDateTime;
 import java.util.List;

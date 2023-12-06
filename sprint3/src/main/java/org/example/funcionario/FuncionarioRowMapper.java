@@ -16,7 +16,6 @@ public class FuncionarioRowMapper implements RowMapper<Funcionario> {
         funcionario.setSenha(resultSet.getString("senha"));
         funcionario.setNome(resultSet.getString("nome"));
         funcionario.setFkEmpresa(resultSet.getInt("fkEmpresa"));
-
         return funcionario;
     }
 }

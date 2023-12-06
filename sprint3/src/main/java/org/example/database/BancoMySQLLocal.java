@@ -1,19 +1,19 @@
-package org.example.banco;
+package org.example.database;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.time.LocalDateTime;
 
-public class BancoSQLServer implements Conectavel {
+public class BancoMySQLLocal implements Conectavel {
     private static JdbcTemplate conexao;
 
     @Override
     public JdbcTemplate Conexao() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl("jdbc:sqlserver://18.232.10.255:1433;databaseName=ConWay;encrypt=false;");
-        dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        dataSource.setUsername("sa");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/ConWay");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUsername("root");
         dataSource.setPassword("urubu100");
         this.conexao = new JdbcTemplate(dataSource);
         return conexao;
@@ -25,6 +25,4 @@ public class BancoSQLServer implements Conectavel {
                 valor,dataHora,fkComponente,fkTotem);
     }
 }
-
-
 
