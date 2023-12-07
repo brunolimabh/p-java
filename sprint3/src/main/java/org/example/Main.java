@@ -77,6 +77,7 @@ public class Main {
                                 do {
                                     System.out.println("Deseja começar o monitoramento?");
                                     System.out.println("0 - Não, voltar!");
+<<<<<<< HEAD
                                     System.out.println("1 - Não, ajustar métricas!");
                                     System.out.println("2 - Sim, entre 5-20 segundos!");
                                     escolha = inputNumber.nextInt();
@@ -85,6 +86,13 @@ public class Main {
 
                                     } else if (escolha == 2){
                                         List<TotemComponente> totemComponentes= mySql.Conexao().query("SELECT *enrique FROM TotemComponente WHERE fkTotem = ?",
+=======
+                                    System.out.println("1 - Sim, entre 5-20 segundos!");
+                                    escolha = inputNumber.nextInt();
+
+                                    if (escolha == 1){
+                                        List<TotemComponente> totemComponentes= mySql.Conexao().query("SELECT fkComponente, fkTotem, valor FROM TotemComponente WHERE fkTotem = ?",
+>>>>>>> 92d290c678c185292e1527135e8a72fd0015d9ab
                                                 new TotemComponenteRowMapper(),
                                                 totemAtual.getIdTotem());
 

@@ -15,8 +15,11 @@ public class TotemComponenteRowMapper implements RowMapper<TotemComponente> {
         totemComponente.setFkComponente(resultSet.getInt("fkComponente"));
         totemComponente.setFkTotem(resultSet.getInt("fkTotem"));
         totemComponente.setValor(resultSet.getInt("valor"));
+<<<<<<< HEAD
         totemComponente.setAlerta(resultSet.getInt("alerta"));
         totemComponente.setCritico(resultSet.getInt("critico"));
+=======
+>>>>>>> 92d290c678c185292e1527135e8a72fd0015d9ab
         return totemComponente;
     }
 }
