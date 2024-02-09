@@ -1,15 +1,16 @@
 package org.example;
 
-public abstract class Funcionario implements IPagamento {
+public abstract class Pessoa implements IPagamento{
     private String nome;
     private int cpf;
-    private double salario;
 
-    public Funcionario(String nome, int cpf, double salario) {
+    public Pessoa(String nome, int cpf) {
         this.nome = nome;
         this.cpf = cpf;
-        this.salario = salario;
     }
+
+    @Override
+    public abstract double getValorPagamento();
 
     public String getNome() {
         return nome;
@@ -25,13 +26,5 @@ public abstract class Funcionario implements IPagamento {
 
     public void setCpf(int cpf) {
         this.cpf = cpf;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
     }
 }

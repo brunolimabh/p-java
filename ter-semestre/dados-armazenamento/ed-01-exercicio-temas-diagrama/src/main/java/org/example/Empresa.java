@@ -22,13 +22,6 @@ public class Empresa {
         }
         return false;
     }
-    public boolean rmvIPagamento(IPagamento ip) {
-        if (Objects.isNull(ip)){
-            pagamentos.remove(ip);
-            return true;
-        }
-        return false;
-    }
     public double getTotalPagamento(){
         double valorTotal = 0.0;
         for (IPagamento pagamentoDaVez: pagamentos){
