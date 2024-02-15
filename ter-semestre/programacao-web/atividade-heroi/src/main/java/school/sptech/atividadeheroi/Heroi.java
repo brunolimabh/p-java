@@ -1,4 +1,4 @@
-package school.sptech.projeto01respostajson;
+package school.sptech.atividadeheroi;
 
 public class Heroi {
 
@@ -8,9 +8,7 @@ public class Heroi {
     private int idade;
     private boolean vivo;
 
-    public Heroi() {
-
-    }
+    public Heroi() {}
 
     public Heroi(String nome, int forca, String habilidade, int idade, boolean vivo) {
         this.nome = nome;
@@ -20,10 +18,9 @@ public class Heroi {
         this.vivo = vivo;
     }
 
-    public String getDescricao(){
-        return forca > 500 ? "É mais de 5 mil" : "Fraquin";
-    }
-
+//    public String getDescricao(){
+//        return forca > 500 ? "É mais de 5 mil" : "Fraquin";
+//    }
 
     public String getNome() {
         return nome;
@@ -64,4 +61,9 @@ public class Heroi {
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
+
+    public String getDescricao() {
+        return forca > 5000 ? "É mais de 5 mil" : "fraquin";
+    }
+
 }
