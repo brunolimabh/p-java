@@ -1,6 +1,7 @@
 package school.sptech.projetointroducao;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,15 @@ public class FraseController {
         return "Tudo Bem?";
     }
 
-    @GetMapping("/personalizada")
-    public String personalizada(){
-        return "Olá " + "" + "! Tudo bem?";
+    @GetMapping("/personalizada/{nome}")
+    public String personalizada(@PathVariable String nome){
+        return "Olá " + nome + "! Tudo bem?";
+    }
+
+    @GetMapping("/personalizadaNS/{nome}/{sobrenome}")
+    public String personalizadaNomeSobrenome(
+            @PathVariable String nome,
+            @PathVariable String sobrenome){
+        return "Olá " + nome + sobrenome + "! Tudo bem?";
     }
 }
