@@ -71,7 +71,7 @@ public class HeroiController {
             herois.remove(indice);
             return "Heroi removido";
         }
-        return "Herou não encontrado";
+        return "Heroi não encontrado";
     }
 
     public boolean isHeroi(int indice) {
