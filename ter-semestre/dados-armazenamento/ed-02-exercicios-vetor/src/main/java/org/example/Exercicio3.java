@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercicio3 {
     public static void main(String[] args) {
-        // Criando os atributor necessários
+        // Criando os atributos necessários
         String[] vetor = new String[10];
         Scanner leitor = new Scanner(System.in);
 

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercicio2 {
     public static void main(String[] args) {
-        // Criando os atributor necessários
+        // Criando os atributos necessários
         Scanner leitor = new Scanner(System.in);
         int[] vetor = new int[10];
         double soma = 0;
