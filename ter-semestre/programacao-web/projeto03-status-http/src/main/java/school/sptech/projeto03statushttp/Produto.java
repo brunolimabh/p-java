@@ -4,7 +4,6 @@ public class Produto {
     private String nome;
     private double preco;
     private int qtdEstoque;
-    private double valorTotalEstoque;
 
     public String getNome() {
         return nome;
@@ -32,9 +31,5 @@ public class Produto {
 
     public double getValorTotalEstoque() {
         return getQtdEstoque() * getPreco();
-    }
-
-    public void setValorTotalEstoque(double valorTotalEstoque) {
-        this.valorTotalEstoque = valorTotalEstoque;
     }
 }

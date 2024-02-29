@@ -27,19 +27,15 @@ public class ProdutoController {
     }
     @GetMapping("/estoque/{qtdEstoque}")
     public ResponseEntity<List<Produto>> listarPorQtdEstoque(@PathVariable int qtdEstoque){
-        List<Produto> produtosQtdEstoque = new ArrayList<>();
-        if (Objects.nonNull(qtdEstoque)){
-            for (Produto produtoDaVez: produtos){
-                if (produtoDaVez.getQtdEstoque() >= qtdEstoque){
-                    produtosQtdEstoque.add(produtoDaVez);
-                }
-            }
+        List<Produto> produtosQtdEstoque = produtos
+                    .stream()
+                    .filter(produtoDaVez ->
+                            produtoDaVez.getQtdEstoque() >= qtdEstoque)
+                    .toList();
             if (produtosQtdEstoque.isEmpty()){
                 return ResponseEntity.status(204).body(produtosQtdEstoque);
             }
             return ResponseEntity.status(200).body(produtosQtdEstoque);
-        }
-        return ResponseEntity.status(400).build();
     }
 
     @PutMapping("/{indice}")
