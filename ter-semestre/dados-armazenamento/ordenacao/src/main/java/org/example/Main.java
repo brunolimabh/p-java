@@ -10,8 +10,8 @@ public class Main {
         Ordenacao ordenacao = new Ordenacao();
 //        ordenacao.selectionSort(v2);
 //        ordenacao.selectionSortOtimizado(v2);
-//        ordenacao.bubbleSort(v2);
-        ordenacao.insertionSort(v2);
+        ordenacao.bubbleSort(v2);
+//        ordenacao.insertionSort(v2);
 //        System.out.println(ordenacao.pesquisaBinaria(vOrdenada,0));
     }
 }

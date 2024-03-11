@@ -60,6 +60,7 @@ public class Ordenacao {
                 comparacao++;
                 if (v[j+1] < v[j]){
                     troca++;
+                    System.out.println(Arrays.toString(v));
                     int aux = v[j];
                     v[j] = v[j+1];
                     v[j+1] = aux;
