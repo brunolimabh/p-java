@@ -60,7 +60,6 @@ public class Ordenacao {
                 comparacao++;
                 if (v[j+1] < v[j]){
                     troca++;
-                    System.out.println(Arrays.toString(v));
                     int aux = v[j];
                     v[j] = v[j+1];
                     v[j+1] = aux;
@@ -77,17 +76,13 @@ public class Ordenacao {
     public void insertionSort(int[] v){
         int comparacao = 0;
         int troca = 0;
-        for (int i = 1; i < v.length; i++) {
-            int aux = v[i];
-            int j = i-1;
-            comparacao++;
-            while (j > -1 && v [j] > aux) {
-                comparacao++;
-                troca++;
-                v [j+1] = v[j];
-                j--;
+        int x, y, k;
+        for (x = 1; x < v.length; x++) {
+            k = v[x];
+            for (y = x - 1; y >= 0 && v[y] > k; y-- ) {
+                v[y+1] = v[y];
             }
-            v[j+1] = aux;
+            v[y+1] = k;
         }
         System.out.println("""
                 Array: %s
