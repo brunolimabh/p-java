@@ -24,17 +24,17 @@ public class Main {
         System.out.println("-".repeat(15));
 
         System.out.println("Ordenando por peso:");
-        Funcionario[] funcPorPeso = ordenacao.ordenarPesoMerge(funcionarios);
-        for (int i = 0; i < funcPorPeso.length; i++) {
-            System.out.println(funcPorPeso[i]);
+        ordenacao.ordenarPesoMerge(0, funcionarios.length, funcionarios);
+        for (int i = 0; i < funcionarios.length; i++) {
+            System.out.println(funcionarios[i]);
         }
 
         System.out.println("-".repeat(15));
 
         System.out.println("Ordenando por salario:");
-        Funcionario[] funcPorSalario = ordenacao.ordenarSalarioQuick(funcionarios);
-        for (int i = 0; i < funcPorPeso.length; i++) {
-            System.out.println(funcPorPeso[i]);
+        ordenacao.ordenarSalarioQuick(funcionarios, 0, funcionarios.length - 1);
+        for (int i = 0; i < funcionarios.length; i++) {
+            System.out.println(funcionarios[i]);
         }
 
 
