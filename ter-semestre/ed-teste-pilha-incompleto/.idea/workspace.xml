@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48cd204e-5880-4121-b505-a7b18b09b83b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/constant/FilmeConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/controller/DiretorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/controller/FilmeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/dto/diretor/DiretorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/dto/diretor/DiretorRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/dto/diretor/DiretorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/dto/filme/FilmeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/dto/filme/FilmeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/dto/filme/FilmeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/entity/Diretor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/entity/Filme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/repository/DiretorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/repository/FilmeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/service/DiretorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/java/school/sptech/webproducaodefilme/service/FilmeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-producao-de-filme/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-filme-bidirecional/src/main/java/school/sptech/projetofilmebidirecional/dto/diretor/DiretorFilmeListagemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-filme-bidirecional/src/main/java/school/sptech/projetofilmebidirecional/dto/filme/FilmeDiretorListagemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-filme-bidirecional/src/main/java/school/sptech/projetofilmebidirecional/dto/filme/FilmeListagemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-filme-bidirecional/src/main/java/school/sptech/projetofilmebidirecional/service/DiretorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-filme-bidirecional/src/main/java/school/sptech/projetofilmebidirecional/service/FilmeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-filme-bidirecional/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/controller/EstabelecimentoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/controller/PessoaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/estabelecimento/EstabelecimentoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/estabelecimento/EstabelecimentoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/estabelecimento/EstabelecimentoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/estabelecimento/EstabelecimentoVincularRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/pessoa/PessoaMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/pessoa/PessoaRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/dto/pessoa/PessoaResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/entity/Estabelecimento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/entity/Pessoa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/exception/ConflitoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/exception/NaoEncontradoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/repository/EstabelecimentoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/repository/PessoaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/service/EstabelecimentoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web-projeto-service-exception/src/main/java/school/sptech/projetoserviceexception/service/PessoaService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/Pilha.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2Oso6LmrfncBze077Ais5VaOvTY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/bruno/Documents/p-java/ter-semestre/ed-18/pom.xml",
+    "run.code.analysis.last.selected.profile": "pProject Default"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Pilha">
+    <configuration name="Pilha" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="teste-pilha-incompleto" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="JUnit" factoryName="JUnit">
+      <module name="teste-pilha-incompleto" />
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PilhaTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Pilha" />
+      <item itemvalue="JUnit.Test" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48cd204e-5880-4121-b505-a7b18b09b83b" name="Changes" comment="" />
+      <created>1682358476701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682358476701</updated>
+    </task>
+    <servers />
+  </component>
+</project>
