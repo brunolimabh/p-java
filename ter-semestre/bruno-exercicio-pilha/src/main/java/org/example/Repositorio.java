@@ -9,11 +9,13 @@ public class Repositorio {
 
     private List<Funcionario> lista;
     private PilhaObj<Integer> pilha;
+    private FilaObj<Funcionario> fila;
     private int identificador;
 
     public Repositorio() {
         this.lista = new ArrayList<>();
         this.pilha = new PilhaObj<>(10);
+        this.fila = new FilaObj<>(10);
         this.identificador = 101;
     }
 
@@ -21,6 +23,22 @@ public class Repositorio {
         func.setId(identificador++);
         lista.add(func);
         pilha.push(func.getId());
+    }
+
+    public void agendarSalvar(Funcionario func) {
+        fila.insert(func);
+    }
+
+    public void executarAgendado(int qtdOperacoes) {
+        if (fila.isEmpty()) {
+            System.out.println("Não há operações agendados");
+        } else if (qtdOperacoes <= 0 || qtdOperacoes > fila.getTamamho()) {
+            System.out.println("Quantidade inválida");
+        } else {
+            for (int i = 0; i < qtdOperacoes; i++) {
+                salvar(fila.poll());
+            }
+        }
     }
 
     public void deletar(int id) {
@@ -57,4 +75,7 @@ public class Repositorio {
         }
     }
 
+    public FilaObj<Funcionario> getFila() {
+        return fila;
+    }
 }

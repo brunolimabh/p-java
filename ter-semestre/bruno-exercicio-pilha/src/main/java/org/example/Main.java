@@ -22,7 +22,9 @@ public class Main {
                     2 - Deletar objeto
                     3 - Exibir
                     4 - Desfazer
-                    5 - Fim
+                    5 - Agendar Salvar
+                    6 - Executar Agendamento
+                    7 - Fim
                     """);
             opcao = leitorNumber.nextInt();
 
@@ -52,6 +54,24 @@ public class Main {
                 rep.desfazer();
 
             } else if (opcao == 5) {
+                System.out.println("Digite o nome do funcionário:");
+                String nome = leitorString.nextLine();
+
+                System.out.println("Digite a quantidade de filhos do funcionário:");
+                int filhos = leitorNumber.nextInt();
+
+                System.out.println("Digite o salário do funcionário:");
+                double salario = leitorNumber.nextDouble();
+
+                Funcionario func = new Funcionario(nome, filhos, salario);
+                rep.agendarSalvar(func);
+
+            } else if (opcao == 6) {
+                System.out.println("Digite a quantidade de operações (atual %d): ".formatted(rep.getFila().getTamamho()));
+                int qtd = leitorNumber.nextInt();
+                rep.executarAgendado(qtd);
+
+            } else if (opcao == 7) {
                 System.out.println("Até a próxima");
 
             } else {
@@ -60,6 +80,6 @@ public class Main {
             }
 
 
-        } while (opcao != 5);
+        } while (opcao != 7);
     }
 }
