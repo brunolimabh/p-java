@@ -20,7 +20,27 @@ public class Main {
                 .region(Region.US_EAST_1)
                 .build();
 
-        menu(ec2, "i-01647ebe380abaf3c");
+//        menu(ec2, "i-01647ebe380abaf3c");
+
+        Region region = Region.US_EAST_1;
+        S3Client s3 = S3Client.builder().region(region).build();
+
+        ListBucketsResponse response = s3.listBuckets();
+        List<Bucket> bucketList = response.buckets();
+
+        for (Bucket bucket: bucketList) {
+            System.out.println("Bucket name "+bucket.name());
+
+            ListObjectsRequest request = ListObjectsRequest.builder()
+                    .bucket(bucket.name())
+                    .build();
+            ListObjectsResponse listObjectsResponse = s3.listObjects(request);
+
+            listObjectsResponse.contents().forEach(content ->  {
+                System.out.println("Chave - " + content.key());
+                System.out.println("eTag - " + content.eTag());
+            });
+        }
     }
 
     public static void listar(Ec2Client ec2) {
