@@ -1,28 +1,33 @@
+
 package org.example;
 
 public class Musica {
-    private int id;
+    private Integer id;
     private String nome;
-    private String cantor;
-    private Double duracao;
+    private String artista;
+    private String duracao;
     private String album;
+    private Double nota;
+    private String genero;
 
-    public Musica(int id, String nome, String cantor, Double duracao, String album) {
+    public Musica(Integer id, String nome, String artista, String duracao, String album, Double nota, String genero) {
         this.id = id;
         this.nome = nome;
-        this.cantor = cantor;
+        this.artista = artista;
         this.duracao = duracao;
         this.album = album;
+        this.nota = nota;
+        this.genero = genero;
     }
 
     public Musica() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,19 +39,19 @@ public class Musica {
         this.nome = nome;
     }
 
-    public String getCantor() {
-        return cantor;
+    public String getArtista() {
+        return artista;
     }
 
-    public void setCantor(String cantor) {
-        this.cantor = cantor;
+    public void setArtista(String artista) {
+        this.artista = artista;
     }
 
-    public Double getDuracao() {
+    public String getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(Double duracao) {
+    public void setDuracao(String duracao) {
         this.duracao = duracao;
     }
 
@@ -58,14 +63,32 @@ public class Musica {
         this.album = album;
     }
 
+    public Double getNota() {
+        return nota;
+    }
+
+    public void setNota(Double nota) {
+        this.nota = nota;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     @Override
     public String toString() {
         return "Musica{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", cantor='" + cantor + '\'' +
-                ", duracao=" + duracao +
+                ", artista='" + artista + '\'' +
+                ", duracao='" + duracao + '\'' +
                 ", album='" + album + '\'' +
+                ", nota=" + nota +
+                ", genero='" + genero + '\'' +
                 '}';
     }
 }
