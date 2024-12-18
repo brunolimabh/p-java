@@ -28,7 +28,7 @@ public class ClienteResource {
 		return s3;
 	}
 
-	private void enviarArquivoS3(String nomeArquivo, byte[] conteudoArquivo) {
+		private void enviarArquivoS3(String nomeArquivo, byte[] conteudoArquivo) {
 		PutObjectRequest putObjectRequest = PutObjectRequest.builder()
 				.bucket("recordacoes")
 				.key(nomeArquivo)

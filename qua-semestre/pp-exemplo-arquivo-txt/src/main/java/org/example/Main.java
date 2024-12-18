@@ -25,7 +25,7 @@ public class Main {
         leArquivoTxt("musicas.txt");
     }
 
-    public static void gravaRegistro(String nomeArq, String registro) {
+        public static void gravaRegistro(String nomeArq, String registro) {
         BufferedWriter saida = null;
 
 

@@ -9,9 +9,9 @@ public class Musica {
     private String album;
     private Double nota;
     private String genero;
-    private Boolean prioridade;
+    private Integer prioridade;
 
-    public Musica(Integer id, String nome, String artista, String duracao, String album, Double nota, String genero, Boolean prioridade) {
+    public Musica(Integer id, String nome, String artista, String duracao, String album, Double nota, String genero, Integer prioridade) {
         this.id = id;
         this.nome = nome;
         this.artista = artista;
@@ -78,11 +78,11 @@ public class Musica {
         this.genero = genero;
     }
 
-    public Boolean getPrioridade() {
+    public Integer getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(Boolean prioridade) {
+    public void setPrioridade(Integer prioridade) {
         this.prioridade = prioridade;
     }
 
